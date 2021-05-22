@@ -26,9 +26,9 @@ metaData.date_subm = [2021 05 22];
 metaData.email    = {'urtzi.enriquez@gmail.com'};            
 metaData.address  = {'Czech Academy of Sciences'};   
 
-metaData.curator     = {'Starrlight Augustine'};
-metaData.email_cur   = {'starrlight@akvaplan.niva.no'}; 
-metaData.date_acc    = [2016 11 07];
+metaData.curator     = {'Nina Marn'};
+metaData.email_cur   = {'nina.marn@gmail.com'}; 
+metaData.date_acc    = [2021 05 22];
 
 %% set data
 % zero-variate data
@@ -187,17 +187,14 @@ D2 = 'Temperatures are guessed';
 metaData.discussion = struct('D1', D1, 'D2', D2);
 
 %% Links
-metaData.links.id_CoL = '7cc21994a3a81bea79a427e804b57632'; % Cat of Life
-metaData.links.id_EoL = '1056890'; % Ency of Life
-metaData.links.id_Wiki = 'Gallotia_galloti'; % Wikipedia
-metaData.links.id_ADW = 'Gallotia_galloti'; % ADW
-metaData.links.id_Taxo = '642475'; % Taxonomicon
-metaData.links.id_ReptileDB = 'genus=Gallotia&species=galloti'; % ReptileDB
+metaData.links.id_CoL = '3F6ZR'; % Cat of Life
+metaData.links.id_EoL = '794629'; % Ency of Life
+metaData.links.id_Wiki = 'Gran_Canaria_giant_lizard'; % Wikipedia
+metaData.links.id_ADW = 'Gallotia_stehlini'; % ADW
+metaData.links.id_Taxo = '642478'; % Taxonomicon
+metaData.links.id_ReptileDB = 'genus=Gallotia&species=stehlini'; % ReptileDB
 
 %% References
-bibkey = 'Wiki'; type = 'Misc'; bib = ...
-'howpublished = {\url{http://en.wikipedia.org/wiki/Gallotia_galloti}}';
-metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Kooy2010'; type = 'Book'; bib = [ ...  % used in setting of chemical parameters and pseudodata
 'author = {Kooijman, S.A.L.M.}, ' ...
