@@ -5,8 +5,8 @@ metaData.phylum     = 'Chordata';
 metaData.class      = 'Reptilia'; 
 metaData.order      = 'Squamata'; 
 metaData.family     = 'Lacertidae';
-metaData.species    = 'Gallotia_galloti'; 
-metaData.species_en = 'Gallot''s lizard'; 
+metaData.species    = 'Gallotia_stehlini'; 
+metaData.species_en = 'Gran Canaria giant lizard'; 
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -16,8 +16,8 @@ metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
 metaData.T_typical  = C2K(26); % K, body temp
-metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwi'; 'Ri'}; 
-metaData.data_1     = {'t-L'}; 
+metaData.data_0     = {'ab'; 'tp'; 'am'; 'Lb'; 'Lp'; 'Lpm'; 'Li'; 'Lim'; 'Wwi'; 'Wwim'; 'Ri'}; 
+metaData.data_1     = {'t-L'; 't-Lm'}; 
 
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
@@ -111,7 +111,7 @@ data.tL = [ ... % time since birth (d), SVL (mm)
 data.tL(:,2) = data.tL(:,2) / 10; % convert mm to cm
 units.tL  = {'d', 'cm'};  label.tL = {'time since birth', 'SVL'};  
 temp.tL   = C2K(24);  units.temp.tL = 'K'; label.temp.tL = 'temperature';
-bibkey.tL = 'CastBaez1998';
+bibkey.tL = 'CastBaez1991';
 comment.tL = 'Data for females';
 
 % t-L data for males
@@ -155,7 +155,7 @@ data.tLm = [ ... % time since birth (d), SVL (mm)
 data.tLm(:,2) = data.tLm(:,2) / 10; % convert mm to cm
 units.tLm  = {'d', 'cm'};  label.tLm = {'time since birth', 'SVL'};  
 temp.tLm   = C2K(24);  units.temp.tLm = 'K'; label.temp.tLm = 'temperature';
-bibkey.tLm = 'CastBaez1998';
+bibkey.tLm = 'CastBaez1991';
 comment.tLm = 'Data for males';
 
 %% set weights for all real data
@@ -177,7 +177,7 @@ txtData.bibkey = bibkey;
 txtData.comment = comment;
 
 %% Group plots
-set1 = {'tL','tLm'}; comment1 = {'Data for females and males (CastBaez1998)'};
+set1 = {'tL','tLm'}; comment1 = {'Data for females and males (CastBaez1991)'};
 metaData.grp.sets = {set1};
 metaData.grp.comment = {comment1};
 
@@ -205,12 +205,30 @@ bibkey = 'Kooy2010'; type = 'Book'; bib = [ ...  % used in setting of chemical p
 'howpublished = {\url{../../../bib/Kooy2010.html}}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
-bibkey = 'CastBaez1988'; type = 'Article'; bib = [ ... 
+bibkey = 'CastBaez1991'; type = 'Article'; bib = [ ... 
 'author = {J. Castanet and M. Baez}, ' ... 
-'year = {1988}, ' ...
-'title = {Data on age and longevity in \emph{Gallotia galloti} ({S}auria, {L}acertidae) assessed by skeletochronology}, ' ...
-'journal = {Herpetological Journal}, ' ...
-'volume = {1}, ' ...
-'pages = {218-222}'];
+'year = {1991}, ' ...
+'title = {Adaptation and evolution in Gallotia lizards from the Canary Islands: age, growth, maturity and longevity}, ' ...
+'journal = {Amphibia-Reptilia}, ' ...
+'volume = {12}, ' ...
+'pages = {81-102}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+%
+bibkey = 'MolinaRodriguez2004'; type = 'Article'; bib = [ ... 
+'author = {M. Molina-Borja and M.A. Rodriguez-Dominguez}, ' ... 
+'year = {2004}, ' ...
+'title = {Evolution of biometric and life-history traits in lizards (Gallotia) from the Canary Islands}, ' ...
+'journal = {J. Zool. Syst. Evol. Research}, ' ...
+'volume = {42}, ' ...
+'pages = {44-53}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+%
+bibkey = 'Rivero2016'; type = 'Article'; bib = [ ... 
+'author = {C. Rivero Suarez, M.A. Rodriguez-Dominguez and M. Molina-Borja}, ' ... 
+'year = {2016}, ' ...
+'title = {Sexual dimorphism in morphological traits and scaling relationships in two populations of Gallotia stehlini (Fam. Lacertidae: Squamata) from Gran Canaria}, ' ...
+'journal = {African Journal of Herpetology}, ' ...
+'volume = {65}, ' ...
+'pages = {1-20}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 
