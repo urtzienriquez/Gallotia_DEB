@@ -39,9 +39,9 @@ data.ab = 56;  units.ab = 'd';    label.ab = 'age at birth';         bibkey.ab =
 data.tp = 23*30;     units.tp = 'd';    label.tp = 'time since birth at puberty';  bibkey.tp = 'MoliRodr2004';
   temp.tp = C2K(24); units.temp.tp = 'K'; label.temp.tp = 'temperature';
   comment.tp = '23 months according to MolinaRodriguez2004';
-data.am = 62*30;  units.am = 'd';    label.am = 'life span';            bibkey.am = 'MoliRodr2004';   
+data.am = 61*30;  units.am = 'd';    label.am = 'life span';            bibkey.am = 'MoliRodr2004';   
   temp.am = C2K(24); units.temp.am = 'K'; label.temp.am = 'temperature'; 
-  comment.am = '62 months according to MolinaRodriguez2004';
+  comment.am = '61 months according to MolinaRodriguez2004';
 
 data.Lb  = 3.4;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey.Lb  = 'MoliRodr2004';  
 data.Lp  = 5.7;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'MoliRodr2004';  
