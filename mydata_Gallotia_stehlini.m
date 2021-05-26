@@ -49,7 +49,7 @@ data.Lpm  = 14.6;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';   
 data.Li  = 17;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MoliRodr2004';  
 data.Lim  = 22;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
-data.Wwi = 88;   units.Wwi = 'g';  label.Wwi = 'ultimate wet'; bibkey.Wwi = 'Rive2016';
+data.Wwi = 88;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'Rive2016';
   comment.Wwi = 'Mean body mass for Tasartico population';
 data.Wwim = 94.59;   units.Wwim = 'g';  label.Wwim = 'ultimate wet males'; bibkey.Wwim = 'Rive2016';
   comment.Wwim = 'Mean body mass of males for Tasartico population';

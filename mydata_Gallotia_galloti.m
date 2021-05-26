@@ -45,7 +45,7 @@ data.Lb  = 4.5;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey
 data.Lp  = 9.7;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'CastBaez1988';  
 data.Li  = 14;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'CastBaez1988';  
 
-data.Wwi = 33;   units.Wwi = 'g';  label.Wwi = 'ultimate wet '; bibkey.Wwi = 'guess';
+data.Wwi = 33;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'guess';
   comment.Wwi = 'based on length-weight of Lacerta agilis: (14/10)^3*12';
 
 data.Ri  = 13/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bibkey.Ri  = 'guess';   
