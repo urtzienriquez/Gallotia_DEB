@@ -51,8 +51,8 @@ data.Lim  = 19.4;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';    
 
 data.Ww0 = 5.2;   units.Ww0 = 'g';  label.Ww0 = 'wet weight of eggs'; bibkey.Ww0 = 'MoliRodr2004';
   comment.Ww0 = 'mass of eggs';
-data.Wwh = 3.95;   units.Wwh = 'g';  label.Wwh = 'wet weight of hatchlings'; bibkey.Wwh = 'MoliRodr2004';
-  comment.Wwh = 'Body mass of hatchlings';
+data.Wwb = 3.95;   units.Wwb = 'g';  label.Wwb = 'wet weight of hatchlings'; bibkey.Wwb = 'MoliRodr2004';
+  comment.Wwb = 'Body mass of hatchlings';
 data.Wwi = 89.35;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'Rome1999';
   comment.Wwi = 'Mean body mass';
 data.Wwim = 151.03;   units.Wwim = 'g';  label.Wwim = 'ultimate wet males'; bibkey.Wwim = 'Rome1999';
