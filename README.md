@@ -29,3 +29,4 @@
   * zero-variate and uni-variate (tL)
 
 **Should check weights in general**
+For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 0.3*? 
