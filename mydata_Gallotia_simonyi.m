@@ -50,9 +50,9 @@ data.Li  = 16.5;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibk
 data.Lim  = 19.4;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
 data.Wwi = 89.35;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'Rome1999';
-  comment.Wwi = 'Mean body mass for Tasartico population';
+  comment.Wwi = 'Mean body mass';
 data.Wwim = 151.03;   units.Wwim = 'g';  label.Wwim = 'ultimate wet males'; bibkey.Wwim = 'Rome1999';
-  comment.Wwim = 'Mean body mass of males for Tasartico population';
+  comment.Wwim = 'Mean body mass';
 
 data.Ri  = 8.6/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bibkey.Ri  = 'MoliRodr2004';   
   temp.Ri = C2K(24);   units.temp.Ri = 'K'; label.temp.Ri = 'temperature';
@@ -82,6 +82,84 @@ data.LN(:,1) = data.LN(:,1) / 10; % convert mm to cm
 units.LN = {'cm', '#'}; label.LN = {'length', 'yearly fecundity'};
 temp.LN = C2K(26.5); units.temp.LN = 'K'; label.temp.LN = 'temperature';
 bibkey.LN = {'RodrMoli1998'};
+
+% t-L data for juveniles
+data.tL_j = [ ... % time since birth (m), SVL (mm)
+0.79177	58.86058
+1.04306	64.0044
+0.75762	64.95569
+0.73414	69.14608
+9.97764	69.18129
+9.97338	69.94318
+9.96057	72.22884
+20.02838 75.12434
+13.28983 77.95581
+11.30561 82.13873
+23.90078 83.901
+21.94004 83.89353
+20.253	85.02996
+21.9283	85.98872
+32.02813 83.17005
+32.00679 86.9795
+24.98599 90.19085
+21.06558 89.98543
+37.01988 92.14145
+23.26161 97.9938
+22.14118 97.98953
+20.17404 99.1249
+43.72642 95.02414
+49.01536 100.94905
+22.95376 102.94501
+20.98661 104.08037
+24.05711 105.99683
+22.91428 109.99248
+33.03117 104.12626
+35.79916 110.04156
+43.88275 117.11998
+43.87741 118.07234
+46.07771 125.31881];
+data.tL_j(:,2) = data.tL_j(:,2) / 10; % convert mm to cm
+data.tL_j(:,1) = data.tL_j(:,1) * 30; % convert months to days
+units.tL_j  = {'d', 'cm'};  label.tL_j = {'time since birth', 'SVL'};  
+temp.tL_j   = C2K(24);  units.temp.tL_j = 'K'; label.temp.tL_j = 'temperature';
+bibkey.tL_j = 'Rome1999';
+comment.tL_j = 'Data for juveniles, temperature guessed';
+
+% t-L data for adults
+data.tL = [ ... % time since birth (m), SVL (mm)
+36.61653	116.32694
+42.45992	120.44773
+42.13952	125.90063
+43.52027	128.29406
+45.40196	138.53095
+56.39709	126.99627
+56.38183	129.04164
+58.62205	128.71219
+59.45101	130.08007
+57.38878	144.04679
+67.49647	138.98484
+67.45324	144.78008
+72.59736	130.14729
+79.46041	110.06875
+83.31024	118.95207
+93.31875	127.18507
+91.33282	130.92492
+94.32571	142.19022
+79.43244	151.31861
+70.16388	156.38485
+81.30904	162.2373
+79.35107	162.22728
+79.32056	166.31804
+79.29767	169.3861
+95.03007	160.26201
+90.97174	179.33216
+127.25007	153.26768];
+data.tL(:,2) = data.tL(:,2) / 10; % convert mm to cm
+data.tL(:,1) = data.tL(:,1) * 30; % convert months to days
+units.tL  = {'d', 'cm'};  label.tL = {'time since birth', 'SVL'};  
+temp.tL   = C2K(24);  units.temp.tL = 'K'; label.temp.tL = 'temperature';
+bibkey.tL = 'Rome1999';
+comment.tL = 'Data for adults of mixed sex, temperature guessed';
 
 %% set weights for all real data
 weights = setweights(data, []);
