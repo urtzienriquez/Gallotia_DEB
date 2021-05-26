@@ -49,8 +49,8 @@ data.Lpm  = 14.6;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';   
 data.Li  = 17;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MoliRodr2004';  
 data.Lim  = 22;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
-% data.Wwi0 = 5.2;   units.Wwi0 = 'g';  label.Wwi0 = 'wet weight of eggs'; bibkey.Wwi0 = 'MoliRodr2004';
-%   comment.Wwi0 = 'mass of eggs';
+% data.Ww0 = 5.2;   units.Ww0 = 'g';  label.Ww0 = 'wet weight of eggs'; bibkey.Ww0 = 'MoliRodr2004';
+%   comment.Ww0 = 'mass of eggs';
 data.Wwh = 2.12;   units.Wwh = 'g';  label.Wwh = 'wet weight of hatchlings'; bibkey.Wwh = 'MoliRodr2004';
   comment.Wwh = 'Body mass of hatchlings';
 data.Wwi = 88;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'Rive2016';

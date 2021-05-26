@@ -52,8 +52,8 @@ data.Lpm  = 8.1;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males (G. g
 data.Li  = 10.2;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MoliRodr2004';  
 data.Lim  = 12.2;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
-% data.Wwi0 = 33;   units.Wwi0 = 'g';  label.Wwi0 = 'ultimate wet weight'; bibkey.Wwi0 = 'guess';
-%   comment.Wwi0 = 'based on length-weight of Lacerta agilis: (14/10)^3*12';
+% data.Ww0 = 33;   units.Ww0 = 'g';  label.Ww0 = 'ultimate wet weight'; bibkey.Ww0 = 'guess';
+%   comment.Ww0 = 'based on length-weight of Lacerta agilis: (14/10)^3*12';
 data.Wwh = 1.16;   units.Wwh = 'g';  label.Wwh = 'wet weight of hatchlings'; bibkey.Wwh = 'MoliRodr2004';
   comment.Wwh = 'Body mass of hatchlings';
 data.Wwi = 33;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'guess';
