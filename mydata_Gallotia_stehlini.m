@@ -163,8 +163,8 @@ comment.tLm = 'Data for males';
 %% set weights for all real data
 weights = setweights(data, []);
 weights.ab = 0.5 * weights.ab; % because it is approximated using another sp
-weights.tL = 10 * weights.tL;
-weights.tLm = 10 * weights.tLm;
+% weights.tL = 10 * weights.tL;
+% weights.tLm = 10 * weights.tLm;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
