@@ -21,6 +21,7 @@ function [prdData, info] = predict_Gallotia_stehlini(par, data, auxData)
   L_b = L_m * l_b;                  % cm, structural length at birth at f
   Lw_b = L_b/ del_M;                % cm, SVL at birth
   aT_b = t_b/ k_M/ TC_ab;           % d, age at birth at f and T
+  Ww_b = L_b^3 * (1 + f * w);       % g, wet weight at birth at f
 
   % puberty 
   L_p = L_m * l_p;                  % cm, structural length at puberty
