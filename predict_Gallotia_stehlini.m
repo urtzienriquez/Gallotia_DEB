@@ -64,6 +64,7 @@ function [prdData, info] = predict_Gallotia_stehlini(par, data, auxData)
   prdData.Lpm = Lw_pm;
   prdData.Li = Lw_i;
   prdData.Lim = Lw_im;
+  prdData.Wwb = Ww_b;
   prdData.Wwi = Ww_i;
   prdData.Wwim = Ww_im;
   prdData.Ri = RT_i;
