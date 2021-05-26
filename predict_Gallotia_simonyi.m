@@ -18,10 +18,16 @@ function [prdData, info] = predict_Gallotia_simonyi(par, data, auxData)
   pars_tp = [g k l_T v_Hb v_Hp];
   [t_p, t_b, l_p, l_b, info] = get_tp(pars_tp, f);
   
+  % initial
+  pars_UE0 = [V_Hb; g; k_J; k_M; v]; % compose parameter vector
+  U_E0 = initial_scaled_reserve(f, pars_UE0); % d.cm^2, initial scaled reserve
+  Ww_0 = U_E0 * p_Am * w_E/ mu_E/ d_E; % g, egg wet weight
+
   % birth
   L_b = L_m * l_b;                  % cm, structural length at birth at f
   Lw_b = L_b/ del_M;                % cm, SVL at birth
   aT_b = t_b/ k_M/ TC_ab;           % d, age at birth at f and T
+  Ww_b = L_b^3 * (1 + f * w);       % g, wet weight at birth at f
 
   % puberty 
   L_p = L_m * l_p;                  % cm, structural length at puberty
@@ -64,6 +70,8 @@ function [prdData, info] = predict_Gallotia_simonyi(par, data, auxData)
   prdData.Lpm = Lw_pm;
   prdData.Li = Lw_i;
   prdData.Lim = Lw_im;
+  prdData.Ww0 = Ww_0;
+  prdData.Wwb = Ww_b;
   prdData.Wwi = Ww_i;
   prdData.Wwim = Ww_im;
   prdData.Ri = RT_i;
