@@ -16,8 +16,8 @@ metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
 metaData.T_typical  = C2K(26); % K, body temp
-metaData.data_0     = {'ab'; 'tp'; 'am'; 'Lb'; 'Lp'; 'Lpm'; 'Li'; 'Lim'; 'Wwi'; 'Wwim'; 'Ri'}; 
-metaData.data_1     = {'t-L'; 't-Lm'}; 
+metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Lpm'; 'Li'; 'Lim'; 'Wwi'; 'Wwim'; 'Ri'}; 
+metaData.data_1     = {'t-L'}; 
 
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
@@ -36,25 +36,25 @@ metaData.date_acc    = [2021 05 22];
 data.ab = 56;  units.ab = 'd';    label.ab = 'age at birth';         bibkey.ab = 'guess';   
   temp.ab = C2K(24); units.temp.ab = 'K'; label.temp.ab = 'temperature';
   comment.ab = 'based on Lacerta agilis';
-data.tp = 35*30;     units.tp = 'd';    label.tp = 'time since birth at puberty';  bibkey.tp = 'MolinaRodriguez2004';
+data.tp = 35*30;     units.tp = 'd';    label.tp = 'time since birth at puberty';  bibkey.tp = 'MoliRodr2004';
   temp.tp = C2K(24); units.temp.tp = 'K'; label.temp.tp = 'temperature';
   comment.tp = '35 months according to MolinaRodriguez2004';
-data.am = 145*30;  units.am = 'd';    label.am = 'life span';            bibkey.am = 'MolinaRodriguez2004';   
+data.am = 145*30;  units.am = 'd';    label.am = 'life span';            bibkey.am = 'MoliRodr2004';   
   temp.am = C2K(24); units.temp.am = 'K'; label.temp.am = 'temperature'; 
   comment.am = '145 months according to MolinaRodriguez2004';
 
-data.Lb  = 5.21;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey.Lb  = 'MolinaRodriguez2004';  
-data.Lp  = 13.5;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'MolinaRodriguez2004';  
-data.Lpm  = 14.6;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';      bibkey.Lpm  = 'MolinaRodriguez2004';  
-data.Li  = 17;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MolinaRodriguez2004';  
-data.Lim  = 22;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MolinaRodriguez2004';  
+data.Lb  = 5.21;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey.Lb  = 'MoliRodr2004';  
+data.Lp  = 13.5;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'MoliRodr2004';  
+data.Lpm  = 14.6;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';      bibkey.Lpm  = 'MoliRodr2004';  
+data.Li  = 17;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MoliRodr2004';  
+data.Lim  = 22;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
-data.Wwi = 88;   units.Wwi = 'g';  label.Wwi = 'ultimate wet'; bibkey.Wwi = 'Rivero2016';
+data.Wwi = 88;   units.Wwi = 'g';  label.Wwi = 'ultimate wet'; bibkey.Wwi = 'Rive2016';
   comment.Wwi = 'Mean body mass for Tasartico population';
-data.Wwim = 94.59;   units.Wwim = 'g';  label.Wwim = 'ultimate wet males'; bibkey.Wwim = 'Rivero2016';
+data.Wwim = 94.59;   units.Wwim = 'g';  label.Wwim = 'ultimate wet males'; bibkey.Wwim = 'Rive2016';
   comment.Wwim = 'Mean body mass of males for Tasartico population';
 
-data.Ri  = 9.8/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bibkey.Ri  = 'MolinaRodriguez2004';   
+data.Ri  = 9.8/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bibkey.Ri  = 'MoliRodr2004';   
   temp.Ri = C2K(24);   units.temp.Ri = 'K'; label.temp.Ri = 'temperature';
   comment.Ri = 'one clutch per year';
 
@@ -214,7 +214,7 @@ bibkey = 'CastBaez1991'; type = 'Article'; bib = [ ...
 'pages = {81-102}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
-bibkey = 'MolinaRodriguez2004'; type = 'Article'; bib = [ ... 
+bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ... 
 'author = {M. Molina-Borja and M.A. Rodriguez-Dominguez}, ' ... 
 'year = {2004}, ' ...
 'title = {Evolution of biometric and life-history traits in lizards (Gallotia) from the Canary Islands}, ' ...
@@ -223,7 +223,7 @@ bibkey = 'MolinaRodriguez2004'; type = 'Article'; bib = [ ...
 'pages = {44-53}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
-bibkey = 'Rivero2016'; type = 'Article'; bib = [ ... 
+bibkey = 'Rive2016'; type = 'Article'; bib = [ ... 
 'author = {C. Rivero Suarez, M.A. Rodriguez-Dominguez and M. Molina-Borja}, ' ... 
 'year = {2016}, ' ...
 'title = {Sexual dimorphism in morphological traits and scaling relationships in two populations of Gallotia stehlini (Fam. Lacertidae: Squamata) from Gran Canaria}, ' ...
