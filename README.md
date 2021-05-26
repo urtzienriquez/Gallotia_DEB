@@ -2,11 +2,11 @@
 
 ### Update 22/05/2021
 
-* I did a first estimation of *Gallotia stehlini* (not present in AmP)
+* I did a first estimation of *G. stehlini* (not present in AmP)
 
 ### Update 25/05/2021
 
-* I added *Gallotia simonyi* (not present in AmP)
+* I added *G. simonyi* (not present in AmP)
   * Included length–repro data
   * Made first param estimation
   * I found growth curve
@@ -16,5 +16,7 @@
 ### Update 26/05/2021
 
 * Some tyding for all sp
-* Added tL_j and tL univariate data for *Gallotia simonyi*
-  * quick firs (unfinished) estimation, just to check
+* Added tL_j and tL univariate data for *G. simonyi*
+  * quick first (unfinished) estimation, just to check
+* Added Wwb for all three sp and Ww0 for the one that was available
+* Added and changed some data to the *G. galloti* entry
