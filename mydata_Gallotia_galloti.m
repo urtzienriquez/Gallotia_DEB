@@ -48,18 +48,16 @@ data.am = 8*365;  units.am = 'd';    label.am = 'life span';            bibkey.a
 
 data.Lb  = 4.5;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey.Lb  = 'CastBaez1988';  
 data.Lp  = 7.7;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'MoliRodr2004';  
-data.Lpm  = 8.1;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males (G. g. eisentrauti)';      bibkey.Lpm  = 'MoliRodr2004';  
+data.Lpm  = 8.1;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';      bibkey.Lpm  = 'MoliRodr2004';  
 data.Li  = 10.2;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MoliRodr2004';  
 data.Lim  = 12.2;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
-% data.Ww0 = 33;   units.Ww0 = 'g';  label.Ww0 = 'ultimate wet weight'; bibkey.Ww0 = 'guess';
-%   comment.Ww0 = 'based on length-weight of Lacerta agilis: (14/10)^3*12';
-data.Wwh = 1.16;   units.Wwh = 'g';  label.Wwh = 'wet weight of hatchlings'; bibkey.Wwh = 'MoliRodr2004';
-  comment.Wwh = 'Body mass of hatchlings';
-data.Wwi = 33;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'guess';
-  comment.Wwi = 'based on length-weight of Lacerta agilis: (14/10)^3*12';
-% data.Wwim = 151.03;   units.Wwim = 'g';  label.Wwim = 'ultimate wet males'; bibkey.Wwim = 'Rome1999';
-%   comment.Wwim = 'Mean body mass';
+data.Wwb = 1.16;   units.Wwb = 'g';  label.Wwb = 'wet weight of hatchlings'; bibkey.Wwb = 'MoliRodr2004';
+  comment.Wwb = 'Body mass of hatchlings';
+data.Wwi = 20.72;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'Vern1995';
+  comment.Wwi = 'Mean body mass of females in May-June';
+data.Wwim = 34.43;   units.Wwim = 'g';  label.Wwim = 'ultimate wet weight of males'; bibkey.Wwim = 'Vern1995';
+  comment.Wwim = 'Mean body mass of males in May-June';
 
 data.Ri  = 2.95/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bibkey.Ri  = 'MoliRodr2004';   
   temp.Ri = C2K(22);   units.temp.Ri = 'K'; label.temp.Ri = 'temperature';
@@ -102,10 +100,11 @@ txtData.comment = comment;
 %% Discussion points
 D1 = 'Males are assumed not to differ from females, due to lack of info';
 D2 = 'Temperatures are guessed';
-D3 = 'Data are for G. galloti galloti and G. galloti eisentrauti (impossible to split since tL data is a mixed of subspecies)'
-D4 = 'Difference to previous entry: added Lpm, Lim, and Wwh'
-D4 = 'Difference to previous entry: changed Lp and Lim (not consistent with the sexual dimorphism in favor of males (MoliRodr2004)); Changed Ri (largely overestimated according to MoliRodr2004)'
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
+D3 = 'Data are for G. galloti galloti and G. galloti eisentrauti (impossible to split since tL data is a mixed of subspecies)';
+D4 = 'Difference to previous entry: added Lpm, Lim, and Wwh';
+D5 = 'Difference to previous entry: changed Lp and Lim (not consistent with the sexual dimorphism in favor of males (MoliRodr2004)); changed Ri (largely overestimated according to MoliRodr2004); changed Wwi (it was estimated previously)';
+D6 = 'All the new data added is for G. galloti galloti';
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4, 'D5', D5, 'D6', D6);
 
 %% Links
 metaData.links.id_CoL = '7cc21994a3a81bea79a427e804b57632'; % Cat of Life
@@ -145,5 +144,14 @@ bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ...
 'journal = {J. Zool. Syst. Evol. Research}, ' ...
 'volume = {42}, ' ...
 'pages = {44-53}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+%
+bibkey = 'Vern1995'; type = 'Article'; bib = [ ... 
+'author = {R. Vernet, J. Castanet and M. Baez}, ' ... 
+'year = {2004}, ' ...
+'title = {Comparative water flux and daily energy expenditure of lizards of the genus Gallotia (Lacertidae) from the Canary Islands}, ' ...
+'journal = {Amphibia-Reptilia}, ' ...
+'volume = {16}, ' ...
+'pages = {55-66}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 
