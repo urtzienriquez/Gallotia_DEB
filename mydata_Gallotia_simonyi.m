@@ -181,6 +181,10 @@ set1 = {'LN'}; comment1 = {'RodrMoli1998'};
 metaData.grp.sets = {set1};
 metaData.grp.comment = {comment1};
 
+set2 = {'tL_j' 'tL'}; comment2 = {'Rome1999'};
+metaData.grp.sets = {set2};
+metaData.grp.comment = {comment2};
+
 %% Discussion points
 D1 = 'Temperatures are guessed';
 metaData.discussion = struct('D1', D1);
