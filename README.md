@@ -20,3 +20,7 @@
   * quick first (unfinished) estimation, just to check
 * Added Wwb for all three sp and Ww0 for the one that was available
 * Added and changed some data to the *G. galloti* entry
+
+* Added *G. intermedia*
+  * only zero-variate data, and of questionable quality
+  * weights might be needed
