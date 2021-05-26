@@ -12,3 +12,9 @@
   * I found growth curve
     * Not included yet
     * Waiting for authors response
+
+### Update 26/05/2021
+
+* Some tyding for all sp
+* Added tL_j and tL univariate data for *Gallotia simonyi*
+  * quick firs (unfinished) estimation, just to check
