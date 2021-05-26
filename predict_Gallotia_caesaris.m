@@ -1,4 +1,4 @@
-function [prdData, info] = predict_Gallotia_intermedia(par, data, auxData)
+function [prdData, info] = predict_Gallotia_caesaris(par, data, auxData)
   
   % unpack par, data, auxData
   cPar = parscomp_st(par); vars_pull(par); 
