@@ -24,3 +24,8 @@
 * Added *G. intermedia*
   * only zero-variate data, and of questionable quality
   * weights might be needed
+
+* Added *G. caesaris*
+  * zero-variate and uni-variate (tL)
+
+**Should check weights in general**
