@@ -28,6 +28,14 @@
 * Added *G. caesaris*
   * zero-variate and uni-variate (tL)
 
+* Added *G. atlantica*
+  * only zero-variate data
+
+* Added *G. bravoana*
+  * only zero-variate data
+  * could not get an estimate (error vHp < vHb)
+    * this also happened with *G. atlantica*, but could fix it with weights. It was not the case with *G. bravoana*
+
 **Should check weights in general**
 
 For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 0.3*?
