@@ -112,7 +112,7 @@ data.tL = [ ... % time since birth (d), SVL (mm)
 3285	191.85];
 data.tL(:,2) = data.tL(:,2) / 10; % convert mm to cm
 units.tL  = {'d', 'cm'};  label.tL = {'time since birth', 'SVL'};  
-temp.tL   = C2K(24);  units.temp.tL = 'K'; label.temp.tL = 'temperature';
+temp.tL   = C2K(19);  units.temp.tL = 'K'; label.temp.tL = 'temperature';
 bibkey.tL = 'CastBaez1991';
 comment.tL = 'Data for females';
 
@@ -156,7 +156,7 @@ data.tLm = [ ... % time since birth (d), SVL (mm)
 2920	208.538];
 data.tLm(:,2) = data.tLm(:,2) / 10; % convert mm to cm
 units.tLm  = {'d', 'cm'};  label.tLm = {'time since birth', 'SVL'};  
-temp.tLm   = C2K(24);  units.temp.tLm = 'K'; label.temp.tLm = 'temperature';
+temp.tLm   = C2K(19);  units.temp.tLm = 'K'; label.temp.tLm = 'temperature';
 bibkey.tLm = 'CastBaez1991';
 comment.tLm = 'Data for males';
 
