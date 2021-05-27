@@ -124,7 +124,7 @@ comment.tL = 'Data for mixed sexes';
 
 %% set weights for all real data
 weights = setweights(data, []);
-weights.ab = 0;
+% weights.ab = 0;
 weights.tL(12:25,:) = 0;
 
 %% set pseudodata and respective weights
