@@ -65,7 +65,6 @@ data.Ri  = 2.49/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bib
 
 %% set weights for all real data
 weights = setweights(data, []);
-weights.ab = 0;
 weights.Lim = 0.1 * weights.Lim;
 weights.Wwim = 0.1 * weights.Wwim;
 
