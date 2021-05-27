@@ -84,7 +84,7 @@ data.LN = [ ...
 200.9555	9.5060];
 data.LN(:,1) = data.LN(:,1) / 10; % convert mm to cm
 units.LN = {'cm', '#'}; label.LN = {'length', 'yearly fecundity'};
-temp.LN = C2K(26.5); units.temp.LN = 'K'; label.temp.LN = 'temperature';
+temp.LN = C2K(21); units.temp.LN = 'K'; label.temp.LN = 'temperature';
 bibkey.LN = {'RodrMoli1998'};
 
 % t-L data for juveniles
@@ -125,7 +125,7 @@ data.tL_j = [ ... % time since birth (m), SVL (mm)
 data.tL_j(:,2) = data.tL_j(:,2) / 10; % convert mm to cm
 data.tL_j(:,1) = data.tL_j(:,1) * 30; % convert months to days
 units.tL_j  = {'d', 'cm'};  label.tL_j = {'time since birth', 'SVL'};  
-temp.tL_j   = C2K(24);  units.temp.tL_j = 'K'; label.temp.tL_j = 'temperature';
+temp.tL_j   = C2K(21);  units.temp.tL_j = 'K'; label.temp.tL_j = 'temperature';
 bibkey.tL_j = 'Rome1999';
 comment.tL_j = 'Data for juveniles, temperature guessed';
 
@@ -161,7 +161,7 @@ data.tL = [ ... % time since birth (m), SVL (mm)
 data.tL(:,2) = data.tL(:,2) / 10; % convert mm to cm
 data.tL(:,1) = data.tL(:,1) * 30; % convert months to days
 units.tL  = {'d', 'cm'};  label.tL = {'time since birth', 'SVL'};  
-temp.tL   = C2K(24);  units.temp.tL = 'K'; label.temp.tL = 'temperature';
+temp.tL   = C2K(21);  units.temp.tL = 'K'; label.temp.tL = 'temperature';
 bibkey.tL = 'Rome1999';
 comment.tL = 'Data for adults of mixed sex, temperature guessed';
 
