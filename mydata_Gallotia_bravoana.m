@@ -67,8 +67,10 @@ data.Ri  = 7/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bibkey
 weights = setweights(data, []);
 weights.tp = 0.5 * weights.tp;
 weights.am = 0.5 * weights.am;
-weights.Lp = 0.1 * weights.Lp;
-weights.Lpm = 0.1 * weights.Lpm;
+weights.Lp = 0.5 * weights.Lp;
+weights.Lpm = 0.5 * weights.Lpm;
+weights.Wwi = 0.5 * weights.Wwi;
+weights.Wwim = 0.5 * weights.Wwim;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
