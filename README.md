@@ -36,6 +36,11 @@
   * could not get an estimate (error vHp < vHb)
     * this also happened with *G. atlantica*, but could fix it with weights. It was not the case with *G. bravoana*
 
+### Update 27/05/2021
+
+* Managed to estimate parameters for all species
+* Still should check weights and temps
+
 **Should check weights in general**
 
 For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 0.3*?
