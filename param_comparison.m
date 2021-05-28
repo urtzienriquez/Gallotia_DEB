@@ -50,7 +50,7 @@ legend_sq = {...
 shstat_options('default'); 
 shstat_options('x_label', 'on');
 shstat_options('y_label', 'on');
-shstat_options('z_label', 'on');
+shstat_options('z_label', 'off');
     
 all_pars = read_allStat('p_M', 'p_Am', 'L_i', 's_M', 'v', 'kap', 's_s');
 p_M = all_pars(:,1); % somatic maintenance costs
@@ -60,10 +60,12 @@ v = all_pars(:,5); % energy conductance
 k = all_pars(:,6); % kappa allocation to soma
 s_s = all_pars(:,7); % supply stress
 
-[Hfig, Hleg] = shstat([L_i, s_s, p_M], legend_sq); 
+[Hfig, Hleg] = shstat([L_i, s_s], legend_sq); 
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
 xlabel('_{10}log L_\infty , cm')  
 ylabel('_{10}log s_s') 
-zlabel('_{10}log [p_M], J/d.cm^3')      
+% zlabel('_{10}log [p_M], J/d.cm^3')      
 
-
+hold on
+plot([log10(stat_stehlini.L_i)], [log10(stat_stehlini.s_s)], '^r', 'MarkerFaceColor','r')
+hold off
