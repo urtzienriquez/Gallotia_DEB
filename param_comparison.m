@@ -44,7 +44,7 @@ load('results_Gallotia_stehlini.mat')
 % % define legend
 legend_sq = {...
     {'o', 8, 3, [0 0 0], [0 0 0]}, 'Lacertidae'; ...
-    {'o', 8, 3, [1 0 1], [1 0 1]}, 'Squamata'; ...
+    {'o', 2, 2, [0 0 0], [1 1 1]}, 'Squamata'; ...
   };
 
 shstat_options('default'); 
@@ -67,5 +67,11 @@ ylabel('_{10}log s_s')
 % zlabel('_{10}log [p_M], J/d.cm^3')      
 
 hold on
-plot([log10(stat_stehlini.L_i)], [log10(stat_stehlini.s_s)], '^r', 'MarkerFaceColor','r')
+plot(log10(stat_atlantica.L_i), log10(stat_atlantica.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
+plot(log10(stat_bravoana.L_i), log10(stat_bravoana.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
+plot(log10(stat_caesaris.L_i), log10(stat_caesaris.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
+plot(log10(stat_galloti.L_i), log10(stat_galloti.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
+plot(log10(stat_intermedia.L_i), log10(stat_intermedia.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
+plot(log10(stat_simonyi.L_i), log10(stat_simonyi.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
+plot(log10(stat_stehlini.L_i), log10(stat_stehlini.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
 hold off
