@@ -46,3 +46,7 @@
 For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 0.3*?
 
 **Check temperatures**
+
+### Update 28/05/2021
+
+* Managed to make a (stupid) plot comparing parameters with other squamata/lacertids
