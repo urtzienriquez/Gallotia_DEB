@@ -16,10 +16,10 @@ metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
 metaData.T_typical  = C2K(26); % K, body temp
-metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwi'; 'Ri'}; 
+metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'t-L'}; 
 
-metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
+metaData.COMPLETE = 2.5; % using criteria of LikaKear2011
 
 metaData.author   = {'Bas Kooijman'};    
 metaData.date_subm = [2016 11 03];              
@@ -31,9 +31,9 @@ metaData.date_mod_1 = [2021 05 26];
 metaData.email_mod_1     = {'urtzi.enriquez@gmail.com'};            
 metaData.address_mod_1   = {'Czech Academy of Sciences'};
 
-metaData.curator     = {'Starrlight Augustine'};
-metaData.email_cur   = {'starrlight@akvaplan.niva.no'}; 
-metaData.date_acc    = [2016 11 07];
+metaData.curator     = {'Nina Marn'};
+metaData.email_cur   = {'nina.marn@gmail.com'}; 
+metaData.date_acc    = [2021 05 28];
 
 %% set data
 % zero-variate data
@@ -52,8 +52,10 @@ data.Lpm  = 8.1;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';    
 data.Li  = 10.2;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'MoliRodr2004';  
 data.Lim  = 12.2;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'MoliRodr2004';  
 
+data.Ww0 = 1.63;   units.Ww0 = 'g';  label.Ww0 = 'wet weight of egg'; bibkey.Ww0 = 'MoliRodr2004';
+  comment.Ww0 = 'data for G. galloti eisentrauti';
 data.Wwb = 1.16;   units.Wwb = 'g';  label.Wwb = 'wet weight of hatchlings'; bibkey.Wwb = 'MoliRodr2004';
-  comment.Wwb = 'Body mass of hatchlings';
+  comment.Wwb = 'data for G. galloti galloti';
 data.Wwi = 20.72;   units.Wwi = 'g';  label.Wwi = 'ultimate wet weight'; bibkey.Wwi = 'Vern1995';
   comment.Wwi = 'Mean body mass of females in May-June';
 data.Wwim = 34.43;   units.Wwim = 'g';  label.Wwim = 'ultimate wet weight of males'; bibkey.Wwim = 'Vern1995';
@@ -101,7 +103,7 @@ txtData.comment = comment;
 D1 = 'Males are assumed not to differ from females, due to lack of info';
 D2 = 'Temperatures are guessed';
 D3 = 'Data are for G. galloti galloti and G. galloti eisentrauti (impossible to split since tL data is a mixed of subspecies)';
-D4 = 'Difference to previous entry: added Lpm, Lim, and Wwh';
+D4 = 'Difference to previous entry: added Lpm, Lim, Ww0 and Wwh';
 D5 = 'Difference to previous entry: changed Lp and Lim (not consistent with the sexual dimorphism in favor of males (MoliRodr2004)); changed Ri (largely overestimated according to MoliRodr2004); changed Wwi (it was estimated previously)';
 D6 = 'All the new data added is for G. galloti galloti';
 metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4, 'D5', D5, 'D6', D6);
@@ -140,7 +142,7 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ... 
 'author = {M. Molina-Borja and M.A. Rodriguez-Dominguez}, ' ... 
 'year = {2004}, ' ...
-'title = {Evolution of biometric and life-history traits in lizards (Gallotia) from the Canary Islands}, ' ...
+'title = {Evolution of biometric and life-history traits in lizards ({G}allotia) from the {C}anary {I}slands}, ' ...
 'journal = {J. Zool. Syst. Evol. Research}, ' ...
 'volume = {42}, ' ...
 'pages = {44-53}'];
@@ -149,7 +151,7 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'Vern1995'; type = 'Article'; bib = [ ... 
 'author = {R. Vernet, J. Castanet and M. Baez}, ' ... 
 'year = {2004}, ' ...
-'title = {Comparative water flux and daily energy expenditure of lizards of the genus Gallotia (Lacertidae) from the Canary Islands}, ' ...
+'title = {Comparative water flux and daily energy expenditure of lizards of the genus {G}allotia ({L}acertidae) from the {C}anary {I}slands}, ' ...
 'journal = {Amphibia-Reptilia}, ' ...
 'volume = {16}, ' ...
 'pages = {55-66}'];

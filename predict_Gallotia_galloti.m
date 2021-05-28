@@ -17,6 +17,11 @@ function [prdData, info] = predict_Gallotia_galloti(par, data, auxData)
   pars_tp = [g k l_T v_Hb v_Hp];
   [t_p, t_b, l_p, l_b, info] = get_tp(pars_tp, f);
   
+  % initial
+  pars_UE0 = [V_Hb; g; k_J; k_M; v]; % compose parameter vector
+  E_0 = p_Am * initial_scaled_reserve(f, pars_UE0); % J, initial energy in egg
+  Ww_0 = E_0 * w_E/ mu_E/ d_E;        % g, initial wet weight
+  
   % birth
   L_b = L_m * l_b;                  % cm, structural length at birth at f
   Lw_b = L_b/ del_M;                % cm, SVL at birth
@@ -64,6 +69,7 @@ function [prdData, info] = predict_Gallotia_galloti(par, data, auxData)
   prdData.Lpm = Lw_pm;
   prdData.Li = Lw_i;
   prdData.Lim = Lw_im;
+  prdData.Ww0 = Ww_0;
   prdData.Wwb = Ww_b;
   prdData.Wwi = Ww_i;
   prdData.Wwim = Ww_im;
