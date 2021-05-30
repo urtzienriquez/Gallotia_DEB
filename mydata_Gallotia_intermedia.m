@@ -16,8 +16,7 @@ metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
 metaData.T_typical  = C2K(26); % K, body temp
-metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Lpm'; 'Li'; 'Lim'; 'Wwi'; 'Wwim'; 'Ri'}; 
-metaData.data_1     = {'L-N'}; 
+metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}; 
 
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
@@ -41,7 +40,7 @@ data.tp = 35*30;     units.tp = 'd';    label.tp = 'time since birth at puberty'
   comment.tp = 'assumed to be the same than G. simonyi';
 data.am = 125*30;  units.am = 'd';    label.am = 'life span';            bibkey.am = 'MoliRodr2004';   
   temp.am = C2K(24); units.temp.am = 'K'; label.temp.am = 'temperature'; 
-  comment.am = '125 months according to MolinaRodriguez2004';
+  comment.am = '125 months according to MoliRodr2004';
 
 data.Lb  = 5.04;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey.Lb  = 'MoliRodr2004';  
 data.Lp  = 11.45;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'MoliRodr2004';  
@@ -79,7 +78,7 @@ txtData.comment = comment;
 
 %% Discussion points
 D1 = 'Temperatures are guessed';
-D2 = 'Life-history and reproduction data are very well known (this is one of IUCN priorities for the species)';
+D2 = 'Life-history and reproduction data are not well known (this is one of IUCN priorities for the species)';
 metaData.discussion = struct('D1', D1, 'D2', D2);
 
 %% Links
@@ -103,7 +102,7 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ... 
 'author = {M. Molina-Borja and M.A. Rodriguez-Dominguez}, ' ... 
 'year = {2004}, ' ...
-'title = {Evolution of biometric and life-history traits in lizards (Gallotia) from the Canary Islands}, ' ...
+'title = {Evolution of biometric and life-history traits in lizards ({G}allotia) from the {C}anary {I}slands}, ' ...
 'journal = {J. Zool. Syst. Evol. Research}, ' ...
 'volume = {42}, ' ...
 'pages = {44-53}'];
