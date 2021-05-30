@@ -100,7 +100,7 @@ txtData.bibkey = bibkey;
 txtData.comment = comment;
 
 %% Discussion points
-D1 = 'Males are assumed not to differ from females, due to lack of info';
+D1 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
 D2 = 'Temperatures are guessed';
 D3 = 'Data are for G. galloti galloti and G. galloti eisentrauti (impossible to split since tL data is a mixed of subspecies)';
 D4 = 'Difference to previous entry: added Lpm, Lim, Ww0 and Wwh';

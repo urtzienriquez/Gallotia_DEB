@@ -82,7 +82,8 @@ txtData.comment = comment;
 %% Discussion points
 D1 = 'Temperatures are guessed';
 D2 = 'Data for G. atlantica atlantica';
-metaData.discussion = struct('D1', D1, 'D2', D2);
+D3 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
 
 %% Links
 metaData.links.id_CoL = '7GT49'; % Cat of Life

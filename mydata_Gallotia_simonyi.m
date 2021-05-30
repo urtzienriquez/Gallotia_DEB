@@ -191,7 +191,8 @@ metaData.grp.comment = {comment2};
 
 %% Discussion points
 D1 = 'Temperatures are guessed';
-metaData.discussion = struct('D1', D1);
+D2 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
+metaData.discussion = struct('D1', D1, 'D2', D2);
 
 %% Links
 metaData.links.id_CoL = '3F6ZQ'; % Cat of Life

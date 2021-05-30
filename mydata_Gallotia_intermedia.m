@@ -79,7 +79,8 @@ txtData.comment = comment;
 %% Discussion points
 D1 = 'Temperatures are guessed';
 D2 = 'Life-history and reproduction data are not well known (this is one of IUCN priorities for the species)';
-metaData.discussion = struct('D1', D1, 'D2', D2);
+D3 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
 
 %% Links
 metaData.links.id_CoL = '3F6ZP'; % Cat of Life

@@ -148,7 +148,8 @@ metaData.grp.comment = {comment1};
 D1 = 'Temperatures are guessed';
 D2 = 'Data for G. caesaris caesaris (El Hierro)';
 D3 = 'In Garc1999 authors say that the growth curve is lower than expected due to drought';
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
+D4 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4);
 
 %% Links
 metaData.links.id_CoL = '7H53X'; % Cat of Life
