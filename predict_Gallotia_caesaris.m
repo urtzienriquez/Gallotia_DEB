@@ -1,5 +1,6 @@
 function [prdData, info] = predict_Gallotia_caesaris(par, data, auxData)
-  
+ 
+
   % unpack par, data, auxData
   cPar = parscomp_st(par); vars_pull(par); 
   vars_pull(cPar);  vars_pull(data);  vars_pull(auxData);
@@ -79,7 +80,10 @@ function [prdData, info] = predict_Gallotia_caesaris(par, data, auxData)
  % univar data
   
   % time-SVL
-  rT_B = TC_tL * k_M/ 3/ (1 + f/ g); % 1/d, von Bert growth rate
+  F = f_tL;  % applies only after hatching (growth during drought) so L_b assumed the same as for zero-var 
+  l_i = F - l_T;                    % -, scaled ultimate length
+  L_i = L_m * l_i/del_M;                  % cm, ultimate structural length at f
+  rT_B = TC_tL * k_M/ 3/ (1 + F/ g); % 1/d, von Bert growth rate
   ELw = (L_i - (L_i - L_b) * exp( - rT_B * tL(:,1)))/ del_M; % cm, SVL 
   
   % pack to output
