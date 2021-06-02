@@ -89,8 +89,8 @@ weights.tL = 10 * weights.tL;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-weights.psd.k_J = 0; weights.psd.k = 0.2;
-data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
+%weights.psd.k_J = 0; weights.psd.k = 0.2;
+%data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -105,8 +105,9 @@ D2 = 'Temperatures are guessed';
 D3 = 'Data are for G. galloti galloti and G. galloti eisentrauti (impossible to split since tL data is a mixed of subspecies)';
 D4 = 'Difference to previous entry: added Lpm, Lim, Ww0 and Wwh';
 D5 = 'Difference to previous entry: changed Lp and Lim (not consistent with the sexual dimorphism in favor of males (MoliRodr2004)); changed Ri (largely overestimated according to MoliRodr2004); changed Wwi (it was estimated previously)';
-D6 = 'All the new data added is for G. galloti galloti';
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4, 'D5', D5, 'D6', D6);
+D6 = 'All the new data added is for G. galloti galloti, except Ww0 for G. galloti eisentrauti';
+D7 = 'Difference to previous entry: Parameter values result in k of around 0.7 with  pseudodata k_J = 0.002 1/d';
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4, 'D5', D5, 'D6', D6, 'D7', D7);
 
 %% Links
 metaData.links.id_CoL = '7cc21994a3a81bea79a427e804b57632'; % Cat of Life
