@@ -15,7 +15,7 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
-metaData.T_typical  = C2K(26); % K, body temp
+metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'L-N', 't-L'}; 
 

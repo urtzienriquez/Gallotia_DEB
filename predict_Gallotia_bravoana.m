@@ -54,9 +54,6 @@ function [prdData, info] = predict_Gallotia_bravoana(par, data, auxData)
   m_Em_m = y_E_V * E_m_m/ E_G; % mol/mol, reserve capacity
   ome_m = m_Em_m * w_E/ w_V; % -, contribution of reserve to weight
   L_mm = v/ k_M/ g_m; L_im = f * L_mm; Lw_im = L_im/ del_M; % cm, max ultimate length
-  pars_tpm = [g_m k l_T v_Hb v_Hpm]; % pars for males
-  [tau_pm, tau_bm, l_pm, l_bm] = get_tp(pars_tpm, f); % - , scaled time, length
-  L_bm = L_mm * l_bm; L_pm = L_mm * l_pm; Lw_pm = L_pm/ del_M;  % cm, lengths
   Ww_im = L_im^3 * (1 + f * ome_m); % g, ultimate wet weight
 
   % pack to output
@@ -65,7 +62,6 @@ function [prdData, info] = predict_Gallotia_bravoana(par, data, auxData)
   prdData.am = aT_m;
   prdData.Lb = Lw_b;
   prdData.Lp = Lw_p;
-  prdData.Lpm = Lw_pm;
   prdData.Li = Lw_i;
   prdData.Lim = Lw_im;
   prdData.Ww0 = Ww_0;

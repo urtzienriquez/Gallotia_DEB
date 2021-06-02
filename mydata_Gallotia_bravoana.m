@@ -15,8 +15,9 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
-metaData.T_typical  = C2K(26); % K, body temp
+metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
+metaData.data_1     = {}; 
 
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
@@ -27,7 +28,7 @@ metaData.address  = {'Czech Academy of Sciences'};
 
 metaData.curator     = {'Nina Marn'};
 metaData.email_cur   = {'nina.marn@gmail.com'}; 
-metaData.date_acc    = [2021 05 26];
+metaData.date_acc    = [2021 06 02];
 
 %% set data
 % zero-variate data
@@ -43,7 +44,6 @@ data.am = 133*30;  units.am = 'd';    label.am = 'life span';            bibkey.
 
 data.Lb  = 5.5;    units.Lb  = 'cm';  label.Lb  = 'SVL at hatching';      bibkey.Lb  = 'Mate2007';  
 data.Lp  = 13.1;    units.Lp  = 'cm';  label.Lp  = 'SVL at puberty';      bibkey.Lp  = 'guess';  
-data.Lpm  = 13.5;    units.Lpm  = 'cm';  label.Lpm  = 'SVL at puberty males';      bibkey.Lpm  = 'guess';  
 data.Li  = 15.5;     units.Li  = 'cm';  label.Li  = 'ultimate SVL';         bibkey.Li  = 'Noga2001';  
 data.Lim  = 19;     units.Lim  = 'cm';  label.Lim  = 'ultimate SVL males';         bibkey.Lim  = 'Noga2001';  
 
@@ -68,8 +68,6 @@ weights.Wwim = 0.5 * weights.Wwim;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-weights.psd.k_J = 0; weights.psd.k = 0.2;
-data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -80,8 +78,8 @@ txtData.comment = comment;
 
 %% Discussion points
 D1 = 'Temperatures are guessed';
-D2 = 'All "guesses" correspond to data taken from G. simonyi';
-D3 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
+D2 = 'All "guesses" correspond to data taken from G. simonyi -- similar ultimate size';
+D3 = 'Males are assumed to differ from females by {p_Am}';
 metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
 
 %% Links
@@ -108,11 +106,11 @@ bibkey = 'Mate2007'; type = 'Book'; bib = [ ...  % used in setting of chemical p
 'title  = {El lagarto gigante de {L}a {G}omera}, ' ...
 'publisher = {Excmo. Cabildo Insular de La Gomera}, ' ...
 'pages = {95 pp.}, ' ...
-'howpublished = {\url{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi6_8bGr_LwAhUHtKQKHew5BgkQFjANegQIExAD&url=https%3A%2F%2Fwww.lacerta.de%2FAF%2FBibliografie%2FBIB_5353.pdf&usg=AOvVaw38LCOviUJPuwXej14lAZx_}}'];
+'howpublished = {\url{https://www.lacerta.de/AF/Bibliografie/BIB_5353.pdf}}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Noga2001'; type = 'Article'; bib = [ ... 
-'author = {M. Nogales, J.C. Rando, A. Valido, & A. Martín}, ' ... 
+'author = {M. Nogales and J.C. Rando and A. Valido and A. Martín}, ' ... 
 'year = {2001}, ' ...
 'title = {Discovery of a living giant lizard, genus {G}allotia ({R}eptilia: {L}acertidae), from {L}a {G}omera, {C}anary {I}slands}, ' ...
 'journal = {Herpetologica}, ' ...
@@ -123,7 +121,7 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'Lope2015'; type = 'Article'; bib = [ ... 
 'author = {M. Lopez-Darias, B. Vanhooydonck, R. Cornette & A. Herrel}, ' ... 
 'year = {2015}, ' ...
-'title = {Sex-specific differences in ecomorphological relationships in lizards of the genus {G}allotia}' ...
+'title = {Sex-specific differences in ecomorphological relationships in lizards of the genus {G}allotia},' ...
 'journal = {Functional Ecology}, ' ...
 'volume = {29}, ' ...
 'pages = {506-514}'];
