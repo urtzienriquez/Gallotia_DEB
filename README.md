@@ -50,3 +50,11 @@ For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 
 ### Update 28/05/2021
 
 * Managed to make a (stupid) plot comparing parameters with other squamata/lacertids
+
+### Update 02/06/2021 (Nina)
+* pushed changes for G. galloti, G. atlantica, G. bravoana, G.caesaris. 
+* Main changes : removed lines in mydata to use psd.k and we are using the default k_J = 0.002 J/d; additional species-specific changes:
+* For G.atlantica - changed name to that in EoL (Atlantic lizard)
+* For G.bravoana - removed Lpm and EH_pm (the data point was guessed), fixed some typos in bibliography
+* For G.caesaris - removed f_LN from pars_init, included f_tL in predict file, adjusted weights for tL (all of the tL data used in estimations)
+
