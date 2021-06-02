@@ -6,7 +6,7 @@ metaData.class      = 'Reptilia';
 metaData.order      = 'Squamata'; 
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_atlantica'; 
-metaData.species_en = 'Haria Lizard';  % it should be Boettger's
+metaData.species_en = 'Atlantic lizard';  % it should be Boettger's 
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,8 +15,10 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
-metaData.T_typical  = C2K(26); % K, body temp
+metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
+metaData.data_1     = {}; 
+
 
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
@@ -27,7 +29,7 @@ metaData.address  = {'Czech Academy of Sciences'};
 
 metaData.curator     = {'Nina Marn'};
 metaData.email_cur   = {'nina.marn@gmail.com'}; 
-metaData.date_acc    = [2021 05 26];
+metaData.date_acc    = [2021 06 02];
 
 %% set data
 % zero-variate data
@@ -69,8 +71,6 @@ weights.Wwim = 0.1 * weights.Wwim;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-weights.psd.k_J = 0; weights.psd.k = 0.2;
-data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -115,7 +115,7 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'Lope2015'; type = 'Article'; bib = [ ... 
 'author = {M. Lopez-Darias, B. Vanhooydonck, R. Cornette & A. Herrel}, ' ... 
 'year = {2015}, ' ...
-'title = {Sex-specific differences in ecomorphological relationships in lizards of the genus {G}allotia}' ...
+'title = {Sex-specific differences in ecomorphological relationships in lizards of the genus {G}allotia},' ...
 'journal = {Functional Ecology}, ' ...
 'volume = {29}, ' ...
 'pages = {506-514}'];
