@@ -58,3 +58,11 @@ For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 
 * For G.bravoana - removed Lpm and EH_pm (the data point was guessed), fixed some typos in bibliography
 * For G.caesaris - removed f_LN from pars_init, included f_tL in predict file, adjusted weights for tL (all of the tL data used in estimations)
 
+* continuation 03/06: did the same general things for G.intermedia, G.simonyi, G.stehlini (remove psd.k and use default k_J = 0.002 J/d fixed), also changed T_typ to 24 C
+* added a fact point for all three species that there are giant Gallotia species
+* For G.simonyi changed common name to that listed in Catalogue of Life (convention for AmP) but marked in section Facts that a sinonym is sometimes used
+* In G. simonyi and G.stehlini removed uni-variate data specific scaled functional responses (f_LN, f_tL) because we keep them fixed at same value as zero-variate f and the temperature is guessed (no strong evidence for a specific f), so there is no need for extra parameters (I modified the predict files so that it is easy to include later if required)
+* Values of maintenance ratio (k) seems to be low for G.intermedia (k = 0.08) and high for G.stehlini (k = 0.95). I marked this as discussion points in respective entries. 
+Generally, I found the values for turtles and some other lizards to be around 0.7 (Bas uses 0.3 as a general value). Anything higher than 1 makes no biological sense. 
+
+* "All Gallotia entries are now submitted for upload to collection"  , I will also notify Bas of this by email 

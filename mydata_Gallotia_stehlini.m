@@ -15,11 +15,11 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
-metaData.T_typical  = C2K(26); % K, body temp
+metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'t-L'}; 
 
-metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
+metaData.COMPLETE = 2.7; % using criteria of LikaKear2011
 
 metaData.author   = {'Urtzi Enriquez-Urzelai'};    
 metaData.date_subm = [2021 05 22];              
@@ -28,7 +28,7 @@ metaData.address  = {'Czech Academy of Sciences'};
 
 metaData.curator     = {'Nina Marn'};
 metaData.email_cur   = {'nina.marn@gmail.com'}; 
-metaData.date_acc    = [2021 05 22];
+metaData.date_acc    = [2021 06 02];
 
 %% set data
 % zero-variate data
@@ -163,13 +163,9 @@ comment.tLm = 'Data for males';
 %% set weights for all real data
 weights = setweights(data, []);
 weights.ab = 0.5 * weights.ab; % because it is approximated using another sp
-% weights.tL = 10 * weights.tL;
-% weights.tLm = 10 * weights.tLm;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-weights.psd.k_J = 0; weights.psd.k = 0.2;
-data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -183,13 +179,20 @@ set1 = {'tL','tLm'}; comment1 = {'Data for females and males (CastBaez1991)'};
 metaData.grp.sets = {set1};
 metaData.grp.comment = {comment1};
 
+%% Facts
+F1 = 'One of the giant Gallotia species (also G. intermedia, G. simonyi)';
+metaData.bibkey.F1 = {'MoliRodr2004'};
+metaData.facts = struct('F1',F1);
+
 %% Discussion points
 D1 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
 D2 = 'Temperatures are guessed';
-metaData.discussion = struct('D1', D1, 'D2', D2);
+D3 = 'Compared to other Gallotia and generally reptiles (k around 0.7), maintenance ratio is relatively high with k = 0.937.' ;
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
 
 %% Links
 metaData.links.id_CoL = '3F6ZR'; % Cat of Life
+% true link: https://www.catalogueoflife.org/data/taxon/3F6ZR
 metaData.links.id_EoL = '794629'; % Ency of Life
 metaData.links.id_Wiki = 'Gran_Canaria_giant_lizard'; % Wikipedia
 metaData.links.id_ADW = 'Gallotia_stehlini'; % ADW

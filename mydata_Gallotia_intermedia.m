@@ -6,7 +6,7 @@ metaData.class      = 'Reptilia';
 metaData.order      = 'Squamata'; 
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_intermedia'; 
-metaData.species_en = 'Tenerife Speckled Lizard'; 
+metaData.species_en = 'Canarian Spotted Lizard'; % Tenerife Speckled Lizard
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,9 +15,10 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
-metaData.T_typical  = C2K(26); % K, body temp
+metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}; 
-
+metaData.data_1     = {};
+    
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
 metaData.author   = {'Urtzi Enriquez-Urzelai'};    
@@ -27,7 +28,7 @@ metaData.address  = {'Czech Academy of Sciences'};
 
 metaData.curator     = {'Nina Marn'};
 metaData.email_cur   = {'nina.marn@gmail.com'}; 
-metaData.date_acc    = [2021 05 26];
+metaData.date_acc    = [2021 06 02];
 
 %% set data
 % zero-variate data
@@ -66,8 +67,7 @@ weights = setweights(data, []);
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-weights.psd.k_J = 0; weights.psd.k = 0.2;
-data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
+% data.psd.k = 0.7;  units.psd.k = '-'; label.psd.k = 'maintenance ratio'; weights.psd.k = 0.5;
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -76,14 +76,21 @@ txtData.label = label;
 txtData.bibkey = bibkey;
 txtData.comment = comment;
 
+%% Facts
+F1 = 'One of the giant Gallotia species (also G. simonyi, G. stehlini)';
+metaData.bibkey.F1 = {'MoliRodr2004'};
+metaData.facts = struct('F1',F1);
+
 %% Discussion points
 D1 = 'Temperatures are guessed';
 D2 = 'Life-history and reproduction data are not well known (this is one of IUCN priorities for the species)';
 D3 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
+D4 = 'Maintenance ratio is very low k = 0.084';
+metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4);
 
 %% Links
-metaData.links.id_CoL = '3F6ZP'; % Cat of Life
+metaData.links.id_CoL = '3F6ZP'; % Cat of Life 
+% CoL correct link: https://www.catalogueoflife.org/data/taxon/3F6ZP
 metaData.links.id_EoL = '794631'; % Ency of Life
 metaData.links.id_Wiki = 'Gallotia_intermedia'; % Wikipedia
 metaData.links.id_ADW = 'Gallotia_intermedia'; % ADW

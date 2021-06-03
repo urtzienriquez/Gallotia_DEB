@@ -6,7 +6,7 @@ metaData.class      = 'Reptilia';
 metaData.order      = 'Squamata'; 
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_simonyi'; 
-metaData.species_en = 'El Hierro giant lizard'; 
+metaData.species_en = 'Simony''s Lizard'; % El Hierro giant lizard
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -19,7 +19,7 @@ metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'L-N', 't-L'}; 
 
-metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
+metaData.COMPLETE = 3; % using criteria of LikaKear2011
 
 metaData.author   = {'Urtzi Enriquez-Urzelai'};    
 metaData.date_subm = [2021 05 26];              
@@ -28,7 +28,7 @@ metaData.address  = {'Czech Academy of Sciences'};
 
 metaData.curator     = {'Nina Marn'};
 metaData.email_cur   = {'nina.marn@gmail.com'}; 
-metaData.date_acc    = [2021 05 26];
+metaData.date_acc    = [2021 06 02];
 
 %% set data
 % zero-variate data
@@ -170,8 +170,6 @@ weights = setweights(data, []);
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-weights.psd.k_J = 0; weights.psd.k = 0.2;
-data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -181,13 +179,16 @@ txtData.bibkey = bibkey;
 txtData.comment = comment;
 
 %% Group plots
-set1 = {'LN'}; comment1 = {'RodrMoli1998'};
+set1 = {'tL_j' , 'tL'}; comment1 = {'Rome1999'};
 metaData.grp.sets = {set1};
 metaData.grp.comment = {comment1};
 
-set2 = {'tL_j' 'tL'}; comment2 = {'Rome1999'};
-metaData.grp.sets = {set2};
-metaData.grp.comment = {comment2};
+%% Facts
+F1 = 'Other common name: El Hierro giant lizard (Encyclopedia of Life)';
+F2 = 'One of the giant Gallotia species (also G. intermedia, G. stehlini)';
+metaData.bibkey.F1 = {'EoL'};
+metaData.bibkey.F2 = {'MoliRodr2004'};
+metaData.facts = struct('F1',F1,'F2',F2);
 
 %% Discussion points
 D1 = 'Temperatures are guessed';
@@ -196,6 +197,7 @@ metaData.discussion = struct('D1', D1, 'D2', D2);
 
 %% Links
 metaData.links.id_CoL = '3F6ZQ'; % Cat of Life
+% correct link: https://www.catalogueoflife.org/data/taxon/3F6ZQ
 metaData.links.id_EoL = '794632'; % Ency of Life
 metaData.links.id_Wiki = 'Gallotia_simonyi'; % Wikipedia
 metaData.links.id_ADW = 'Gallotia_simonyi'; % ADW
@@ -224,7 +226,7 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'RodrMoli1998'; type = 'Article'; bib = [ ... 
 'author = {M.A. Rodriguez-Dominguez and M. Molina-Borja}, ' ... 
 'year = {1998}, ' ...
-'title = {Reproduction of the endangered Hierro giant lizard {G}allotia simonyi machadoi}, ' ...
+'title = {Reproduction of the endangered Hierro giant lizard \textit{Gallotia simonyi machadoi}}, ' ...
 'journal = {Journal of Herpetology}, ' ...
 'volume = {32}, ' ...
 'pages = {498-504}'];
@@ -233,11 +235,15 @@ metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 bibkey = 'Rome1999'; type = 'Incollection'; bib = [ ... 
 'author = {M. Romero-Bevia, J.A. Mateo and V. Perez-Mellado}, ' ... 
 'year = {1999}, ' ...
-'title = {Morfometria y estructura en edades y sexos de la poblacion natural de {G}allotia simonyi}, ' ...
+'title = {Morfometria y estructura en edades y sexos de la poblacion natural de \textit{Gallotia simonyi}}, ' ...
 'booktitle = {El lagarto de El Hierro: Bases para su conservacion}, ' ...
 'editor = {L.F. Lopez-Jurado and J.A. Mateo}, ' ...
-'publisher = {Asociacion Herpetologica Española}, ' ...
+'publisher = {Asociacion Herpetologica Espanola}, ' ...
 'address = {Madrid}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+%
+bibkey = 'EoL'; type = 'misc'; bib =  ...
+'howpublished = {\url{https://eol.org/pages/794632}}';
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 
 

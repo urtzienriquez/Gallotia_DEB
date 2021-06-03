@@ -79,10 +79,13 @@ function [prdData, info] = predict_Gallotia_simonyi(par, data, auxData)
   % univar data
   
   % length - yearly fecundity
+    f_LN = f; % assume same f as zero-variate as default
   pars_R = [kap; kap_R; g; k_J; k_M; L_T; v; U_Hb; U_Hp]; % compose parameter vector
   LN = TC_LN * 365 * reprod_rate(LN(:,1) * del_M, f_LN, pars_R); % #, yearly fecundity
 
   % time-SVL juveniles
+  f_tL = f; % assume same f as zero-variate as default
+    L_i = L_m * (f_tL-l_T);  % cm, ultimate structural length at f; if f_tL very different, L_b needs to be recalculated too
   rT_B = TC_tL * k_M/ 3/ (1 + f_tL/ g); % 1/d, von Bert growth rate
   ELwj = (L_i - (L_i - L_b) * exp( - rT_B * tL_j(:,1)))/ del_M; % cm, SVL 
   
