@@ -78,7 +78,8 @@ function [prdData, info] = predict_Gallotia_galloti(par, data, auxData)
   % univar data
   
   % time-SVL
-  rT_B = TC_tL * k_M/ 3/ (1 + f/ g); % 1/d, von Bert growth rate
+  L_b = L_m * get_lb([g k v_Hb], f_tL); L_i = L_m * f_tL;
+  rT_B = TC_tL * k_M/ 3/ (1 + f_tL/ g); % 1/d, von Bert growth rate
   ELw = (L_i - (L_i - L_b) * exp( - rT_B * tL(:,1)))/ del_M; % cm, SVL 
   
   % pack to output

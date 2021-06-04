@@ -27,6 +27,7 @@ par.s_G = 0.0001;     free.s_G   = 0;   units.s_G = '-';          label.s_G = 'G
 par.E_Hpm = 1.838e+05; free.E_Hpm = 1;   units.E_Hpm = 'J';        label.E_Hpm = 'maturity at puberty for males'; 
 par.del_M = 0.22604;  free.del_M = 1;   units.del_M = '-';        label.del_M = 'shape coefficient'; 
 par.f = 1;            free.f     = 0;   units.f = '-';            label.f = 'scaled functional response for 0-var data'; 
+par.f_tL = 1;         free.f_tL  = 0;   units.f_tL = '-';         label.f_tL = 'scaled functional response for tL data'; 
 par.z_m = 4.2334;     free.z_m   = 1;   units.z_m = '-';          label.z_m = 'zoom factor for males'; 
 
 %% set chemical parameters from Kooy2010 

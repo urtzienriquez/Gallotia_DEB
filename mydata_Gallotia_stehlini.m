@@ -7,6 +7,7 @@ metaData.order      = 'Squamata';
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_stehlini'; 
 metaData.species_en = 'Gran Canaria giant lizard'; 
+
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,6 +16,7 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
+
 metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'t-L'}; 
@@ -175,7 +177,7 @@ txtData.bibkey = bibkey;
 txtData.comment = comment;
 
 %% Group plots
-set1 = {'tL','tLm'}; comment1 = {'Data for females and males (CastBaez1991)'};
+set1 = {'tL','tLm'}; comment1 = {'Data for females and males'};
 metaData.grp.sets = {set1};
 metaData.grp.comment = {comment1};
 
@@ -192,7 +194,6 @@ metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
 
 %% Links
 metaData.links.id_CoL = '3F6ZR'; % Cat of Life
-% true link: https://www.catalogueoflife.org/data/taxon/3F6ZR
 metaData.links.id_EoL = '794629'; % Ency of Life
 metaData.links.id_Wiki = 'Gran_Canaria_giant_lizard'; % Wikipedia
 metaData.links.id_ADW = 'Gallotia_stehlini'; % ADW
@@ -229,7 +230,7 @@ bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ...
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Rive2016'; type = 'Article'; bib = [ ... 
-'author = {C. Rivero Suarez, M.A. Rodriguez-Dominguez and M. Molina-Borja}, ' ... 
+'author = {C. Rivero Suarez and M.A. Rodriguez-Dominguez and M. Molina-Borja}, ' ... 
 'year = {2016}, ' ...
 'title = {Sexual dimorphism in morphological traits and scaling relationships in two populations of {G}allotia stehlini (Fam. {L}acertidae: {S}quamata) from {G}ran {C}anaria}, ' ...
 'journal = {African Journal of Herpetology}, ' ...

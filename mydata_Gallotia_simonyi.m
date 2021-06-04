@@ -7,6 +7,7 @@ metaData.order      = 'Squamata';
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_simonyi'; 
 metaData.species_en = 'Simony''s Lizard'; % El Hierro giant lizard
+
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,7 +16,9 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
+
 metaData.T_typical  = C2K(24); % K, body temp
+
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'L-N', 't-L'}; 
 
@@ -179,25 +182,24 @@ txtData.bibkey = bibkey;
 txtData.comment = comment;
 
 %% Group plots
-set1 = {'tL_j' , 'tL'}; comment1 = {'Rome1999'};
+set1 = {'tL_j' , 'tL'}; comment1 = {'Data for juveniles, adults (mixed sex)'};
 metaData.grp.sets = {set1};
 metaData.grp.comment = {comment1};
 
 %% Facts
 F1 = 'Other common name: El Hierro giant lizard (Encyclopedia of Life)';
-F2 = 'One of the giant Gallotia species (also G. intermedia, G. stehlini)';
 metaData.bibkey.F1 = {'EoL'};
+F2 = 'One of the giant Gallotia species (also G. intermedia, G. stehlini)';
 metaData.bibkey.F2 = {'MoliRodr2004'};
-metaData.facts = struct('F1',F1,'F2',F2);
+metaData.facts = struct('F1',F1, 'F2',F2);
 
 %% Discussion points
 D1 = 'Temperatures are guessed';
 D2 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
-metaData.discussion = struct('D1', D1, 'D2', D2);
+metaData.discussion = struct('D1',D1, 'D2',D2);
 
 %% Links
 metaData.links.id_CoL = '3F6ZQ'; % Cat of Life
-% correct link: https://www.catalogueoflife.org/data/taxon/3F6ZQ
 metaData.links.id_EoL = '794632'; % Ency of Life
 metaData.links.id_Wiki = 'Gallotia_simonyi'; % Wikipedia
 metaData.links.id_ADW = 'Gallotia_simonyi'; % ADW
@@ -233,7 +235,7 @@ bibkey = 'RodrMoli1998'; type = 'Article'; bib = [ ...
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Rome1999'; type = 'Incollection'; bib = [ ... 
-'author = {M. Romero-Bevia, J.A. Mateo and V. Perez-Mellado}, ' ... 
+'author = {M. Romero-Bevia and J.A. Mateo and V. Perez-Mellado}, ' ... 
 'year = {1999}, ' ...
 'title = {Morfometria y estructura en edades y sexos de la poblacion natural de \textit{Gallotia simonyi}}, ' ...
 'booktitle = {El lagarto de El Hierro: Bases para su conservacion}, ' ...

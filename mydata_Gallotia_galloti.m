@@ -7,6 +7,7 @@ metaData.order      = 'Squamata';
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_galloti'; 
 metaData.species_en = 'Gallot''s lizard'; 
+
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,6 +16,7 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
+
 metaData.T_typical  = C2K(26); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {'t-L'}; 
@@ -89,8 +91,6 @@ weights.tL = 10 * weights.tL;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
-%weights.psd.k_J = 0; weights.psd.k = 0.2;
-%data.psd.k = 0.3; units.psd.k  = '-'; label.psd.k  = 'maintenance ratio'; 
 
 %% pack auxData and txtData for output
 auxData.temp = temp;
@@ -107,7 +107,7 @@ D4 = 'Difference to previous entry: added Lpm, Lim, Ww0 and Wwh';
 D5 = 'Difference to previous entry: changed Lp and Lim (not consistent with the sexual dimorphism in favor of males (MoliRodr2004)); changed Ri (largely overestimated according to MoliRodr2004); changed Wwi (it was estimated previously)';
 D6 = 'All the new data added is for G. galloti galloti, except Ww0 for G. galloti eisentrauti';
 D7 = 'Difference to previous entry: Parameter values result in k of around 0.7 with  pseudodata k_J = 0.002 1/d';
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4, 'D5', D5, 'D6', D6, 'D7', D7);
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3, 'D4',D4, 'D5',D5, 'D6',D6, 'D7',D7);
 
 %% Links
 metaData.links.id_CoL = '7cc21994a3a81bea79a427e804b57632'; % Cat of Life
@@ -150,7 +150,7 @@ bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ...
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Vern1995'; type = 'Article'; bib = [ ... 
-'author = {R. Vernet, J. Castanet and M. Baez}, ' ... 
+'author = {R. Vernet and J. Castanet and M. Baez}, ' ... 
 'year = {2004}, ' ...
 'title = {Comparative water flux and daily energy expenditure of lizards of the genus {G}allotia ({L}acertidae) from the {C}anary {I}slands}, ' ...
 'journal = {Amphibia-Reptilia}, ' ...

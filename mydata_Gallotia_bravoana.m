@@ -15,6 +15,7 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
+
 metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {}; 
@@ -80,7 +81,7 @@ txtData.comment = comment;
 D1 = 'Temperatures are guessed';
 D2 = 'All "guesses" correspond to data taken from G. simonyi -- similar ultimate size';
 D3 = 'Males are assumed to differ from females by {p_Am}';
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% Links
 metaData.links.id_CoL = '3F6ZJ'; % Cat of Life
@@ -119,7 +120,7 @@ bibkey = 'Noga2001'; type = 'Article'; bib = [ ...
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Lope2015'; type = 'Article'; bib = [ ... 
-'author = {M. Lopez-Darias, B. Vanhooydonck, R. Cornette & A. Herrel}, ' ... 
+'author = {M. Lopez-Darias and B. Vanhooydonck and R. Cornette and A. Herrel}, ' ... 
 'year = {2015}, ' ...
 'title = {Sex-specific differences in ecomorphological relationships in lizards of the genus {G}allotia},' ...
 'journal = {Functional Ecology}, ' ...

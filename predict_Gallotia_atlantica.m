@@ -30,7 +30,7 @@ function [prdData, info] = predict_Gallotia_atlantica(par, data, auxData)
   % puberty 
   L_p = L_m * l_p;                  % cm, structural length at puberty
   Lw_p = L_p/ del_M;                % cm, SVL at puberty
-  tT_p = (t_p - t_b)/ k_M/ TC_tp;   % d, age at puberty at f and T
+  tT_p = (t_p - t_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f and T
 
   % ultimate
   l_i = f - l_T;                    % -, scaled ultimate length

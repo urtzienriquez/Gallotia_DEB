@@ -7,6 +7,7 @@ metaData.order      = 'Squamata';
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_intermedia'; 
 metaData.species_en = 'Canarian Spotted Lizard'; % Tenerife Speckled Lizard
+
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,6 +16,7 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
+
 metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {};
@@ -90,7 +92,6 @@ metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3, 'D4', D4);
 
 %% Links
 metaData.links.id_CoL = '3F6ZP'; % Cat of Life 
-% CoL correct link: https://www.catalogueoflife.org/data/taxon/3F6ZP
 metaData.links.id_EoL = '794631'; % Ency of Life
 metaData.links.id_Wiki = 'Gallotia_intermedia'; % Wikipedia
 metaData.links.id_ADW = 'Gallotia_intermedia'; % ADW

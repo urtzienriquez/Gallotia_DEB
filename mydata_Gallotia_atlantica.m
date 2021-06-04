@@ -6,7 +6,8 @@ metaData.class      = 'Reptilia';
 metaData.order      = 'Squamata'; 
 metaData.family     = 'Lacertidae';
 metaData.species    = 'Gallotia_atlantica'; 
-metaData.species_en = 'Atlantic lizard';  % it should be Boettger's 
+metaData.species_en = 'Atlantic lizard';  
+
 metaData.ecoCode.climate = {'BWh'};
 metaData.ecoCode.ecozone = {'THp'};
 metaData.ecoCode.habitat = {'0iTg'};
@@ -15,10 +16,10 @@ metaData.ecoCode.migrate = {};
 metaData.ecoCode.food    = {'biCi'};
 metaData.ecoCode.gender  = {'Dg'};
 metaData.ecoCode.reprod  = {'O'};
+
 metaData.T_typical  = C2K(24); % K, body temp
 metaData.data_0     = {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri'}; 
 metaData.data_1     = {}; 
-
 
 metaData.COMPLETE = 2.4; % using criteria of LikaKear2011
 
@@ -63,11 +64,10 @@ data.Ri  = 2.49/365;   units.Ri  = '#/d'; label.Ri  = 'maximum reprod rate'; bib
   temp.Ri = C2K(24);   units.temp.Ri = 'K'; label.temp.Ri = 'temperature';
   comment.Ri = 'one clutch per year';
 
-
 %% set weights for all real data
 weights = setweights(data, []);
-weights.Lim = 0.1 * weights.Lim;
-weights.Wwim = 0.1 * weights.Wwim;
+%weights.Lim = 0.1 * weights.Lim;
+%weights.Wwim = 0.1 * weights.Wwim;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
@@ -83,7 +83,7 @@ txtData.comment = comment;
 D1 = 'Temperatures are guessed';
 D2 = 'Data for G. atlantica atlantica';
 D3 = 'Males are assumed to differ from females by {p_Am} and E_Hp';
-metaData.discussion = struct('D1', D1, 'D2', D2, 'D3', D3);
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% Links
 metaData.links.id_CoL = '7GT49'; % Cat of Life
@@ -113,7 +113,7 @@ bibkey = 'MoliRodr2004'; type = 'Article'; bib = [ ...
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Lope2015'; type = 'Article'; bib = [ ... 
-'author = {M. Lopez-Darias, B. Vanhooydonck, R. Cornette & A. Herrel}, ' ... 
+'author = {M. Lopez-Darias and B. Vanhooydonck and R. Cornette and A. Herrel}, ' ... 
 'year = {2015}, ' ...
 'title = {Sex-specific differences in ecomorphological relationships in lizards of the genus {G}allotia},' ...
 'journal = {Functional Ecology}, ' ...

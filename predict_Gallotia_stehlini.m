@@ -72,12 +72,12 @@ function [prdData, info] = predict_Gallotia_stehlini(par, data, auxData)
   % univar data
   
   % time-SVL
-  f_tL = f; % assume same f as zero-variate as default
-    L_i = L_m * (f_tL-l_T);  % cm, ultimate structural length at f; if f_tL very different, L_b needs to be recalculated too
+  L_b = L_m * get_lb([g k v_Hb], f_tL); L_i = L_m * f_tL;  % cm, ultimate structural length at f
   rT_B = TC_tL * k_M/ 3/ (1 + f_tL/ g); % 1/d, von Bert growth rate
   ELw = (L_i - (L_i - L_b) * exp( - rT_B * tL(:,1)))/ del_M; % cm, SVL 
   
   % time-SVL males
+  L_bm = L_mm * get_lb([g_m k v_Hb], f_tL); L_im = L_mm * f_tL;  % cm, ultimate structural length at f
   rT_Bm = TC_tL * k_M/ 3/ (1 + f_tL/ g_m); % 1/d, von Bert growth rate
   ELwm = (L_im - (L_im - L_bm) * exp( - rT_Bm * tLm(:,1)))/ del_M; % cm, SVL 
   
