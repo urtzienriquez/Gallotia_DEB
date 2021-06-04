@@ -9,40 +9,10 @@ sum(count(mods, u_mods(2))); % 3 stf models (std with foetal development)
 % Should we just compare sp with the same model?
 
 
-% stats for atlantica
-load('results_Gallotia_atlantica.mat')
-[stat_atlantica, txtStat_atlantica] = statistics_st(metaPar.model, par);
-
-% stats for bravoana
-load('results_Gallotia_bravoana.mat')
-[stat_bravoana, txtStat_bravoana] = statistics_st(metaPar.model, par);
-
-% stats for caesaris
-load('results_Gallotia_caesaris.mat')
-[stat_caesaris, txtStat_caesaris] = statistics_st(metaPar.model, par);
-
-% stats for galloti
-load('results_Gallotia_galloti.mat')
-[stat_galloti, txtStat_galloti] = statistics_st(metaPar.model, par);
-
-% stats for intermedia
-load('results_Gallotia_intermedia.mat')
-[stat_intermedia, txtStat_intermedia] = statistics_st(metaPar.model, par);
-
-% stats for simonyi
-load('results_Gallotia_simonyi.mat')
-[stat_simonyi, txtStat_simonyi] = statistics_st(metaPar.model, par);
-
-% stats for stehlini
-load('results_Gallotia_stehlini.mat')
-[stat_stehlini, txtStat_stehlini] = statistics_st(metaPar.model, par);
-
-
-% printstat_st(stat_atlantica, txtStat_atlantica)
-
 
 % % define legend
 legend_sq = {...
+    {'o', 8, 3, [1 0 1], [1 0 1]}, 'Gallotia'; ...
     {'o', 8, 3, [0 0 0], [0 0 0]}, 'Lacertidae'; ...
     {'o', 2, 2, [0 0 0], [1 1 1]}, 'Squamata'; ...
   };
@@ -50,7 +20,7 @@ legend_sq = {...
 shstat_options('default'); 
 shstat_options('x_label', 'on');
 shstat_options('y_label', 'on');
-shstat_options('z_label', 'off');
+shstat_options('z_label', 'on');
     
 all_pars = read_allStat('p_M', 'p_Am', 'L_i', 's_M', 'v', 'kap', 's_s');
 p_M = all_pars(:,1); % somatic maintenance costs
@@ -60,18 +30,53 @@ v = all_pars(:,5); % energy conductance
 k = all_pars(:,6); % kappa allocation to soma
 s_s = all_pars(:,7); % supply stress
 
-[Hfig, Hleg] = shstat([L_i, s_s], legend_sq); 
+[Hfig, Hleg] = shstat([p_Am, p_M, v], legend_sq); 
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
-xlabel('_{10}log L_\infty , cm')  
-ylabel('_{10}log s_s') 
-% zlabel('_{10}log [p_M], J/d.cm^3')      
+xlabel('_{10}log \{p_{Am}\}, J/d.cm^2')  
+ylabel('_{10}log [p_M], J/d.cm^3') 
+zlabel('_{10}log v, cm/d')      
 
-hold on
-plot(log10(stat_atlantica.L_i), log10(stat_atlantica.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-plot(log10(stat_bravoana.L_i), log10(stat_bravoana.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-plot(log10(stat_caesaris.L_i), log10(stat_caesaris.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-plot(log10(stat_galloti.L_i), log10(stat_galloti.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-plot(log10(stat_intermedia.L_i), log10(stat_intermedia.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-plot(log10(stat_simonyi.L_i), log10(stat_simonyi.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-plot(log10(stat_stehlini.L_i), log10(stat_stehlini.s_s), 'o', 'Color',[1 0 1], 'MarkerFaceColor',[1 0 1], 'markersize', 10)
-hold off
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multi-dimensional scaling
+
+
+species = select('Squamata');
+traits = {'a_m'; 'a_p'; 'a_b'; 'Ww_i'; 'Ww_p'; 'Ww_b'; 'R_i'; 's_s'; 's_Hbp'; 'p_M'; 'v'; 'kap'; 'E_Hb'; 'E_Hp'};
+
+% first compute distance-matrix and pass it to cmdscale
+[y, e] = cmdscale(dist_traits(species, traits)); % configuration matrix, eigenvalues
+n_traits= length(traits); E = e(n_traits)/e(1);
+fprintf(['With ', num2str(n_traits), ' traits the, ', num2str(n_traits), '-th eigenvalue as fraction of the first one is ', num2str(E), '\n'])
+%return
+
+% make sure that the number of rows of data matches the number of entries
+data = NaN(length(select),3); data(select_01('Squamata'),:) = y(:,1:3);
+
+% plot with legend in second figure
+shstat_options('default');
+shstat_options('x_transform', 'none');
+shstat_options('y_transform', 'none');
+shstat_options('z_transform', 'none');
+[Hfig, Hleg] = shstat(data, legend_sq, ['Squamata ', num2str(length(species)), ' @ ', datestr(date,26)]);
+
+fig(Hleg)
+title('Squamata');
+%saveas (Hleg, 'SquamataLegend.png')
+
+% connect the points for subclades
+connect_subclade(Hfig, y(:,1:3), 'Squamata', 'Gallotia');
+
+%saveas (Hfig, 'SquamataMds.png')
+
+figure % plot eigenvalues
+n_e = length(e); n_t = length(traits);
+plot(1:n_t, e(1:n_t), '*b', n_t+1:n_e, e(n_t+1:n_e), '*r')
+xlabel('rank');
+ylabel('eigenvalue');
+title('MDS for Squamata');
+set(gca, 'FontSize', 15, 'Box', 'on');
+%saveas (gca, 'SquamataEigen.png')
+
+
+
