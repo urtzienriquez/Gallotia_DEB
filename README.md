@@ -52,7 +52,7 @@ For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 
 * Managed to make a (stupid) plot comparing parameters with other squamata/lacertids
 
 ### Update 02/06/2021 (Nina)
-* pushed changes for G. galloti, G. atlantica, G. bravoana, G.caesaris. 
+* pushed changes for G. galloti, G. atlantica, G. bravoana, G.caesaris.
 * Main changes : removed lines in mydata to use psd.k and we are using the default k_J = 0.002 J/d; additional species-specific changes:
 * For G.atlantica - changed name to that in EoL (Atlantic lizard)
 * For G.bravoana - removed Lpm and EH_pm (the data point was guessed), fixed some typos in bibliography
@@ -62,7 +62,12 @@ For instance, why *weights.psd.k_J = 0* *weights.psd.k = 0.2* and *data.psd.k = 
 * added a fact point for all three species that there are giant Gallotia species
 * For G.simonyi changed common name to that listed in Catalogue of Life (convention for AmP) but marked in section Facts that a sinonym is sometimes used
 * In G. simonyi and G.stehlini removed uni-variate data specific scaled functional responses (f_LN, f_tL) because we keep them fixed at same value as zero-variate f and the temperature is guessed (no strong evidence for a specific f), so there is no need for extra parameters (I modified the predict files so that it is easy to include later if required)
-* Values of maintenance ratio (k) seems to be low for G.intermedia (k = 0.08) and high for G.stehlini (k = 0.95). I marked this as discussion points in respective entries. 
-Generally, I found the values for turtles and some other lizards to be around 0.7 (Bas uses 0.3 as a general value). Anything higher than 1 makes no biological sense. 
+* Values of maintenance ratio (k) seems to be low for G.intermedia (k = 0.08) and high for G.stehlini (k = 0.95). I marked this as discussion points in respective entries.
+Generally, I found the values for turtles and some other lizards to be around 0.7 (Bas uses 0.3 as a general value). Anything higher than 1 makes no biological sense.
 
-* "All Gallotia entries are now submitted for upload to collection"  , I will also notify Bas of this by email 
+* "All Gallotia entries are now submitted for upload to collection"  , I will also notify Bas of this by email
+
+### Update 04/06/2021
+
+* Replaced all files with the final files in AmP
+* Update param_comparison.m file reading parameters from AmPdata and add multidimensional scaling plot.
