@@ -80,7 +80,7 @@ function [prdData, info] = predict_Gallotia_caesaris(par, data, auxData)
  % univar data
   
   % time-SVL
-  F = f_tL;  % applies only after hatching (growth during drought) so L_b assumed the same as for zero-var 
+  F = f_tL_c;  % applies only after hatching (growth during drought) so L_b assumed the same as for zero-var 
   l_i = F - l_T;                    % -, scaled ultimate length
   L_i = L_m * l_i/del_M;                  % cm, ultimate structural length at f
   rT_B = TC_tL * k_M/ 3/ (1 + F/ g); % 1/d, von Bert growth rate
