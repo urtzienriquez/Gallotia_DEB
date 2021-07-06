@@ -40,11 +40,10 @@ zlabel('_{10}log v, cm/d')
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Multi-dimensional scaling
 
-lizards = 'Lacertidae'; % options: 'Squamata', 'Gallotia', ''Lacertidae'
+lizards = 'Squamata'; % options: 'Squamata', 
 % traits = {'a_m'; 'a_p'; 'a_b'; 'Ww_i'; 'Ww_p'; 'Ww_b'; 'R_i'; 's_s'; 's_Hbp'; 'p_M'; 'v'; 'kap'; 'E_Hb'; 'E_Hp'};
 % traits = {'v'; 'E_m'; 'a_p'; 'p_M'; 'L_m'; 'R_i'}; % use anything from allStat
 traits = {'v'; 'E_m'; 'E_G'; 'p_M'; 'E_Hp'; 'E_Hb'; 'kap'; 'p_Am'; 'h_a'}; % use anything from allStat
-% --> for Gallotia, we can only use up to 7 traits
 % traits = {'del_M'};
 
 switch lizards
@@ -52,7 +51,6 @@ switch lizards
         species = select('Squamata');
         legend_liz = legend_sq; % use the previously defined legend for squamata
     case 'Gallotia'
-        species = select('Gallotia');
         legend_liz = {...
             % big gallotias, red edge
             {'o', 8, 3, [1 0 0], [0 0 0]}, 'Gallotia_intermedia'; ...
@@ -63,21 +61,6 @@ switch lizards
             {'o', 6, 3, [0 0 1], [0 0 1]}, 'Gallotia_atlantica'; ....
             {'o', 6, 3, [0 0 1], [1 1 1]}, 'Gallotia_caesaris'; ....
             {'o', 6, 3, [0 0 1], [0 0 1]}, 'Gallotia_galloti'; ....
-            };
-        case 'Lacertidae'
-        species = select('Lacertidae');
-        legend_liz = {...
-            % big gallotias, red edge
-            {'o', 8, 3, [1 0 0], [0 0 0]}, 'Gallotia_intermedia'; ...
-            {'o', 8, 3, [1 0 0], [1 0 0]}, 'Gallotia_simonyi'; ...
-            {'o', 8, 3, [1 0 0], [1 1 0]}, 'Gallotia_stehlini'; ...
-            {'o', 8, 3, [1 0 0], [1 0 1]}, 'Gallotia_bravoana'; ...
-            % other gallotia, blue edge
-            {'o', 6, 3, [0 0 1], [0 0 1]}, 'Gallotia_atlantica'; ....
-            {'o', 6, 3, [0 0 1], [1 1 1]}, 'Gallotia_caesaris'; ....
-            {'o', 6, 3, [0 0 1], [0 0 1]}, 'Gallotia_galloti'; ....
-            % Lacertidae - black dots
-            {'o', 8, 3, [0 0 0], [0 0 0]}, 'Lacertidae'; ...
             };
 end
                
@@ -96,10 +79,10 @@ shstat_options('default');
 shstat_options('x_transform', 'none');
 shstat_options('y_transform', 'none');
 shstat_options('z_transform', 'none');
-[Hfig, Hleg] = shstat(data, legend_liz, [lizards, ' ', num2str(length(species)), ' @ ', datestr(date,26)]);
+[Hfig, Hleg] = shstat(data, legend_sq, [lizards, ' ', num2str(length(species)), ' @ ', datestr(date,26)]);
 
 fig(Hleg)
-title(lizards);
+title('Squamata');
 %saveas (Hleg, 'SquamataLegend.png')
 
 switch lizards
