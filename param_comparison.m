@@ -96,10 +96,16 @@ shstat_options('default');
 shstat_options('x_transform', 'none');
 shstat_options('y_transform', 'none');
 shstat_options('z_transform', 'none');
+shstat_options('x_label', 'on');
+shstat_options('y_label', 'on');
+shstat_options('z_label', 'on');
 [Hfig, Hleg] = shstat(data, legend_liz, [lizards, ' ', num2str(length(species)), ' @ ', datestr(date,26)]);
 
 fig(Hleg)
-title(lizards);
+xlabel('Coordinate 1')
+ylabel('Coordinate 2')
+zlabel('Coordinate 3')
+title(lizards)
 %saveas (Hleg, 'SquamataLegend.png')
 
 switch lizards
@@ -119,10 +125,11 @@ title(['MDS for ', lizards]);
 set(gca, 'FontSize', 15, 'Box', 'on');
 %saveas (gca, 'SquamataEigen.png')
 
-c =NaN(2,size(val,2));
+c =NaN(3,size(val,2));
 for i=1: size(val,2)
     c(1,i) = corr(y(:,1), val(:,i));
     c(2,i) = corr(y(:,2), val(:,i));
+    c(3,i) = corr(y(:,3), val(:,i));
 end
 traits'
 c
