@@ -45,6 +45,7 @@ lizards = 'Lacertidae'; % options: 'Squamata', 'Gallotia', ''Lacertidae'
 % traits = {'v'; 'E_m'; 'a_p'; 'p_M'; 'L_m'; 'R_i'}; % use anything from allStat
 traits = {'v'; 'E_m'; 'E_G'; 'p_M'; 'E_Hp'; 'E_Hb'; 'kap'; 'p_Am'; 'h_a'}; % use anything from allStat
 % --> for Gallotia, we can only use up to 7 traits
+% traits = {'v'; 'E_m'; 'E_G'; 'p_M'; 'E_Hp'; 'kap'; 'p_Am'}; 
 % traits = {'del_M'};
 
 switch lizards
@@ -96,9 +97,6 @@ shstat_options('default');
 shstat_options('x_transform', 'none');
 shstat_options('y_transform', 'none');
 shstat_options('z_transform', 'none');
-shstat_options('x_label', 'on');
-shstat_options('y_label', 'on');
-shstat_options('z_label', 'on');
 [Hfig, Hleg] = shstat(data, legend_liz, [lizards, ' ', num2str(length(species)), ' @ ', datestr(date,26)]);
 
 fig(Hleg)
